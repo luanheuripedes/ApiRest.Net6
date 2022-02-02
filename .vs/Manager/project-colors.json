@@ -1,0 +1,61 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "3c2c855b-f2ed-415c-9b06-18a2334e62e7": {
+      "ProjectGuid": "3c2c855b-f2ed-415c-9b06-18a2334e62e7",
+      "DisplayName": "API",
+      "ColorIndex": 0
+    },
+    "39b519ba-b625-4be6-9122-196098de3832": {
+      "ProjectGuid": "39b519ba-b625-4be6-9122-196098de3832",
+      "DisplayName": "Domain",
+      "ColorIndex": 1
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Arquivos Diversos",
+      "ColorIndex": -1
+    },
+    "3ad8d72d-0238-4d59-9358-25016c948ee9": {
+      "ProjectGuid": "3ad8d72d-0238-4d59-9358-25016c948ee9",
+      "DisplayName": "Api",
+      "ColorIndex": 2
+    },
+    "cf8be29b-11de-46bb-8729-020a4fbcae66": {
+      "ProjectGuid": "cf8be29b-11de-46bb-8729-020a4fbcae66",
+      "DisplayName": "Domain",
+      "ColorIndex": 3
+    },
+    "9aa5a385-9072-4fcc-9244-4efc14881365": {
+      "ProjectGuid": "9aa5a385-9072-4fcc-9244-4efc14881365",
+      "DisplayName": "Services",
+      "ColorIndex": 4
+    },
+    "8ab8d41f-0e12-4139-91ca-74760713d9a4": {
+      "ProjectGuid": "8ab8d41f-0e12-4139-91ca-74760713d9a4",
+      "DisplayName": "Infrastructure",
+      "ColorIndex": 5
+    },
+    "18000bbd-61b8-4bef-8ee8-38f9cad6a0c1": {
+      "ProjectGuid": "18000bbd-61b8-4bef-8ee8-38f9cad6a0c1",
+      "DisplayName": "Api",
+      "ColorIndex": 6
+    },
+    "ec22eff9-a33c-4bef-9041-9c85c838c447": {
+      "ProjectGuid": "ec22eff9-a33c-4bef-9041-9c85c838c447",
+      "DisplayName": "Domain",
+      "ColorIndex": 7
+    },
+    "42cba6df-0a16-45cf-a540-35092d00e747": {
+      "ProjectGuid": "42cba6df-0a16-45cf-a540-35092d00e747",
+      "DisplayName": "Service",
+      "ColorIndex": 8
+    },
+    "c4560104-7213-42af-96fc-459f578a342c": {
+      "ProjectGuid": "c4560104-7213-42af-96fc-459f578a342c",
+      "DisplayName": "Infrastructure",
+      "ColorIndex": 9
+    }
+  },
+  "NextColorIndex": 10
+}
