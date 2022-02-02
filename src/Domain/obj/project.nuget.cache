@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "NC5dsWE1uBQoBVcYtRWE1kWa/m81ikdAvGysibQVQ/6i2knuswZ85TtUT++onRgW56W+fiyDvEcfsQKILgqPzw==",
+  "dgSpecHash": "wAtJ+SG8IEyEQKZ8OgAobo//534p86InLEcOr+2Lid10WDiL+J/82fQi2TB6nxS28ja8KDT6dz6QYNIdkfRW4w==",
   "success": true,
   "projectFilePath": "C:\\Users\\heuri\\Documents\\Lucas Schola\\Manager\\src\\Domain\\Domain.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\heuri\\.nuget\\packages\\fluentvalidation\\10.3.6\\fluentvalidation.10.3.6.nupkg.sha512"
+  ],
   "logs": []
 }
