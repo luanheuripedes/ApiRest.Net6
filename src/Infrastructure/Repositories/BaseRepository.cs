@@ -7,9 +7,9 @@ namespace Infrastructure.Repositories
 {
     public class BaseRepository<T> : IBaseRepository<T> where T : Base
     {
-        private readonly MySqlContext _context;
+        private readonly ManagerContext _context;
 
-        public BaseRepository(MySqlContext context)
+        public BaseRepository(ManagerContext context)
         {
             _context = context;
         }
@@ -30,7 +30,7 @@ namespace Infrastructure.Repositories
 
             return obj;
         }
-        public virtual async Task<T> Remove(long id)
+        public virtual async Task Remove(long id)
         {
             var obj = await Get(id);
 

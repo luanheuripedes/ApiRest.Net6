@@ -1,4 +1,5 @@
-﻿using Domain.Validators;
+﻿using Core.Exceptions;
+using Domain.Validators;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -60,7 +61,7 @@ namespace Domain.Entities
                     _errors.Add(error.ErrorMessage);
 
                 }
-                throw new Exception("Alguns campos estão invalidos: " + _errors[0]);
+                throw new DomainExceptions("Alguns campos estão invalidos: " , _errors);
             }
 
             return true;
