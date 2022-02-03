@@ -17,7 +17,7 @@ namespace Infrastructure.Context
         }
 
         //Recebo o meu Db Context por depedencia
-        public ManagerContext(DbContextOptions options) : base(options)
+        public ManagerContext(DbContextOptions<ManagerContext> options) : base(options)
         {
         }
 

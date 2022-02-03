@@ -26,6 +26,8 @@ namespace Domain.Entities
             this.Email = email;
             this.Senha = senha;
             _errors = new List<string>(); // instanciado aqui para nao dar nullPointer na hora de criar o metodo validate
+
+            Validate();
         }
 
         //Comportamentos
