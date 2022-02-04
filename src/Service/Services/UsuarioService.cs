@@ -79,7 +79,7 @@ namespace Services.Services
 
         public async Task<List<UsuarioDTO>> GetAll()
         {
-            var todosUsuarios = _usuarioRepository.GetAll();
+            var todosUsuarios = await _usuarioRepository.GetAll();
 
             var usuariosDto = _mapper.Map<List<UsuarioDTO>>(todosUsuarios);
 
@@ -88,7 +88,7 @@ namespace Services.Services
 
         public async Task<UsuarioDTO> GetByEmail(string email)
         {
-            var usuarioEmail = _usuarioRepository.GetByEmail(email);
+            var usuarioEmail = await _usuarioRepository.GetByEmail(email);
 
             if(usuarioEmail == null)
             {
@@ -104,7 +104,7 @@ namespace Services.Services
 
         public async Task<List<UsuarioDTO>> SearchByEmail(string email)
         {
-            var usuariosEmail = _usuarioRepository.SearchByEmail(email);
+            var usuariosEmail = await _usuarioRepository.SearchByEmail(email);
 
             var usuariosEmailDTO = _mapper.Map<List<UsuarioDTO>>(usuariosEmail);
 
@@ -113,7 +113,7 @@ namespace Services.Services
 
         public async Task<List<UsuarioDTO>> SearchByName(string name)
         {
-            var usuariosNome = _usuarioRepository.SearchByName(name);
+            var usuariosNome = await _usuarioRepository.SearchByName(name);
 
             var usuariosNomeDTO = _mapper.Map<List<UsuarioDTO>>(usuariosNome);
 
