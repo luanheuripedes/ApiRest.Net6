@@ -1,16 +1,11 @@
-﻿using Api.ViewModels;
+﻿using Api.Configuration;
+using Api.ViewModels;
 using AutoMapper;
 using Domain.Entities;
 using Infrastructure.Context;
-using Infrastructure.Interfaces;
-using Infrastructure.Repositories;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using Services.DTO;
-using Services.Interfaces;
-using Services.Services;
-using Pomelo.EntityFrameworkCore.MySql;
-using Microsoft.EntityFrameworkCore;
-using Api.Configuration;
 
 namespace Api
 {
@@ -36,7 +31,36 @@ namespace Api
 
             services.AddControllers();
 
-            
+
+
+            var secretKey = Configuration["Jwt:Key"];
+            /*
+            #region Jwt
+            //Aqui vai a nossa key secreta, o recomendado é guarda-la no arquivo de configuração
+            var secretKey = Configuration["Jwt:Key"];
+
+            services.AddAuthentication(x => // parte do aspNet
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(x =>
+            {
+                x.RequireHttpsMetadata = false;
+                x.SaveToken = true;
+                x.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(secretKey)),
+                    ValidateIssuer = false,
+                    ValidateAudience = false
+                };
+            });
+            #endregion
+            */
+
+            services.ConfigurationJtw(secretKey);
+
             //Configuração do autoMaPPER
             var autoMapperConfig = new MapperConfiguration(cfg =>
             {
@@ -54,13 +78,19 @@ namespace Api
 
             services.AddEndpointsApiExplorer();
 
+
+            //Swagger
             /*
             services.AddSwaggerGen(c => {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Api", Version = "v1" });
                 
             });
             */
-            services.AddSwaggerGen();
+
+            services.SwaggerConfigurationGen();
+
+
+
             services.ResolveDependencies();
         }
 
@@ -73,10 +103,13 @@ namespace Api
                 app.UseSwaggerUI();
             }
 
+            //Para o jwt autenticação e autorização
+            app.UseAuthentication();
             app.UseHttpsRedirection();
             
             app.UseAuthorization();
             app.MapControllers();
+            
         }
 
     }

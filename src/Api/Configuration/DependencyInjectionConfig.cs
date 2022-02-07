@@ -1,4 +1,5 @@
-﻿using Infrastructure.Context;
+﻿using Api.Token;
+using Infrastructure.Context;
 using Infrastructure.Interfaces;
 using Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -16,7 +17,8 @@ namespace Api.Configuration
             services.AddScoped<IUsuarioService, UsuarioService>(); //Adiciona a instacia por requisição
             services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 
-            
+            services.AddScoped<ITokenGenerator, TokenGenerator>();
+
 
             return services;
         }

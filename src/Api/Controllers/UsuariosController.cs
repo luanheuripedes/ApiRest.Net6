@@ -2,6 +2,7 @@
 using Api.ViewModels;
 using AutoMapper;
 using Core.Exceptions;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Services.DTO;
 using Services.Interfaces;
@@ -25,6 +26,7 @@ namespace Api.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         [Route("/api/v1/usuarios/create")] //v1 e´a versão do controller, caso precise passar parametros novos ou coisas do tipo a gente versiona a rota
         public async Task<IActionResult> Create([FromBody] CreateUsuarioViewModel userViewModel) //[FromBody] vem do corpo da requisição
         {
@@ -51,6 +53,7 @@ namespace Api.Controllers
         }
 
         [HttpPut]
+        [Authorize]
         [Route("/api/v1/usuarios/update")]
         public async Task<IActionResult> Update([FromBody] UpdateUsuarioViewModel userViewModel)
         {
@@ -76,6 +79,7 @@ namespace Api.Controllers
         }
 
         [HttpDelete]
+        [Authorize]
         [Route("/api/v1/usuarios/remove/{id}")]
         public async Task<IActionResult> Remove(long id)
         {
@@ -97,6 +101,7 @@ namespace Api.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         [Route("/api/v1/usuarios/get/id")]
         public async Task<IActionResult> Get(long id)
         {
@@ -123,6 +128,7 @@ namespace Api.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         [Route("/api/v1/usuarios/get-all")]
         public async Task<IActionResult> GetAll()
         {
@@ -145,6 +151,7 @@ namespace Api.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         [Route("/api/v1/usuarios/get-by-email")]
         public async Task<IActionResult> GetByEmail(string email)
         {
@@ -170,6 +177,7 @@ namespace Api.Controllers
             }
         }
         [HttpGet]
+        [Authorize]
         [Route("/api/v1/usuarios/search-by-name")]
         public async Task<IActionResult> SearchByName([FromQuery] string name)
         {
